@@ -3,14 +3,54 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   const skills = [
-    { name: "React", level: 90, color: "from-blue-500 to-cyan-500" },
-    { name: "Node.js", level: 85, color: "from-green-500 to-emerald-500" },
-    { name: "TypeScript", level: 80, color: "from-blue-600 to-indigo-600" },
-    { name: "PostgreSQL", level: 75, color: "from-indigo-500 to-purple-500" },
-    { name: "Docker", level: 70, color: "from-blue-400 to-blue-600" },
-    { name: "AWS", level: 65, color: "from-orange-500 to-red-500" },
-    { name: "Python", level: 80, color: "from-yellow-500 to-orange-500" },
-    { name: "MongoDB", level: 75, color: "from-green-600 to-green-700" }
+    { 
+      name: "React", 
+      level: 90, 
+      color: "from-blue-500 to-cyan-500",
+      icon: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "Node.js", 
+      level: 85, 
+      color: "from-green-500 to-emerald-500",
+      icon: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "TypeScript", 
+      level: 80, 
+      color: "from-blue-600 to-indigo-600",
+      icon: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "PostgreSQL", 
+      level: 75, 
+      color: "from-indigo-500 to-purple-500",
+      icon: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "Docker", 
+      level: 70, 
+      color: "from-blue-400 to-blue-600",
+      icon: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "AWS", 
+      level: 65, 
+      color: "from-orange-500 to-red-500",
+      icon: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "Python", 
+      level: 80, 
+      color: "from-yellow-500 to-orange-500",
+      icon: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=100&h=100&fit=crop&crop=center"
+    },
+    { 
+      name: "MongoDB", 
+      level: 75, 
+      color: "from-green-600 to-green-700",
+      icon: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&h=100&fit=crop&crop=center"
+    }
   ];
 
   const tools = [
@@ -53,8 +93,15 @@ const Skills = () => {
                   viewport={{ once: true }}
                   className="space-y-2"
                 >
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-medium text-slate-700">{skill.name}</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name}
+                        className="w-8 h-8 rounded object-cover"
+                      />
+                      <span className="text-lg font-medium text-slate-700">{skill.name}</span>
+                    </div>
                     <span className="text-sm text-slate-500">{skill.level}%</span>
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">

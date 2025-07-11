@@ -29,19 +29,6 @@ const Experience = () => {
         "Deployed applications on AWS with CI/CD pipelines"
       ],
       color: "from-green-500 to-teal-500"
-    },
-    {
-      title: "Software Development Intern",
-      company: "InnovateLabs",
-      duration: "Sep 2022 - Dec 2022",
-      location: "New York, NY",
-      responsibilities: [
-        "Assisted in developing mobile-responsive web applications",
-        "Wrote comprehensive unit tests achieving 90% code coverage",
-        "Contributed to API development using Node.js and Express.js",
-        "Participated in daily standups and sprint planning sessions"
-      ],
-      color: "from-purple-500 to-pink-500"
     }
   ];
 
