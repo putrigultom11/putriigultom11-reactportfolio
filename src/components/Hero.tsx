@@ -2,8 +2,17 @@
 import { motion } from "framer-motion";
 import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TypewriterText from "./TypewriterText";
 
 const Hero = () => {
+  const jobTitles = [
+    "Software Engineer",
+    "Full Stack Developer", 
+    "Frontend Developer",
+    "Backend Developer",
+    "React Developer"
+  ];
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Background Animation */}
@@ -40,8 +49,8 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4">
               John Smith
             </h1>
-            <h2 className="text-2xl md:text-3xl text-blue-600 font-medium mb-2">
-              Software Engineer
+            <h2 className="text-2xl md:text-3xl text-blue-600 font-medium mb-2 h-12">
+              <TypewriterText words={jobTitles} />
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Passionate about creating innovative solutions and building scalable applications

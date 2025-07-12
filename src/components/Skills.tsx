@@ -83,8 +83,8 @@ const Skills = () => {
       viewport={{ once: true }}
       className="mb-12"
     >
-      <h3 className="text-2xl font-bold text-slate-800 mb-6">{title}</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+      <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">{title}</h3>
+      <div className="flex flex-wrap justify-center gap-4">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -93,14 +93,13 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center space-y-3 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-blue-100 hover:border-blue-300"
+            className="transition-transform duration-300"
           >
             <img 
               src={skill.icon} 
               alt={skill.name}
-              className="w-12 h-12 rounded object-cover"
+              className="w-16 h-16 rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow duration-300"
             />
-            <span className="text-sm font-medium text-slate-700 text-center">{skill.name}</span>
           </motion.div>
         ))}
       </div>
@@ -123,7 +122,7 @@ const Skills = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
         </motion.div>
         
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <SkillCategory 
             title="Programming Languages" 
             skills={programmingLanguages} 
