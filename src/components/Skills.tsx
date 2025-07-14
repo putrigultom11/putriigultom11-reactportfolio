@@ -4,74 +4,74 @@ import { motion } from "framer-motion";
 const Skills = () => {
   const programmingLanguages = [
     { 
-      name: "JavaScript", 
-      icon: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "Python", 
-      icon: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "TypeScript", 
-      icon: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "Java", 
-      icon: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "C#", 
-      icon: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100&h=100&fit=crop&crop=center"
+      name: "Golang", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
     },
     { 
       name: "PHP", 
-      icon: "https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+    },
+    { 
+      name: "Python", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    { 
+      name: "JavaScript", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    { 
+      name: "Java", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    },
+    { 
+      name: "C#", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
     }
   ];
 
   const databases = [
     { 
       name: "PostgreSQL", 
-      icon: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "MongoDB", 
-      icon: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
     },
     { 
       name: "MySQL", 
-      icon: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
     },
     { 
-      name: "Redis", 
-      icon: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop&crop=center"
+      name: "MongoDB", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    { 
+      name: "Neo4J", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg"
     }
   ];
 
   const cloudDevOps = [
     { 
+      name: "GCP", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+    },
+    { 
       name: "AWS", 
-      icon: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
     },
     { 
       name: "Docker", 
-      icon: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
     },
     { 
       name: "Kubernetes", 
-      icon: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
     },
     { 
       name: "Git", 
-      icon: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=100&h=100&fit=crop&crop=center"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
     },
     { 
-      name: "Jenkins", 
-      icon: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=100&h=100&fit=crop&crop=center"
-    },
-    { 
-      name: "GCP", 
-      icon: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=100&h=100&fit=crop&crop=center"
+      name: "Jenkins (CI/CD)", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
     }
   ];
 
@@ -81,10 +81,10 @@ const Skills = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay }}
       viewport={{ once: true }}
-      className="mb-12"
+      className="mb-16"
     >
-      <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">{title}</h3>
-      <div className="flex flex-wrap justify-center gap-4">
+      <h3 className="text-2xl font-bold text-slate-800 mb-8 text-left">{title}</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -93,13 +93,18 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
-            className="transition-transform duration-300"
+            className="flex flex-col items-center group cursor-pointer"
           >
-            <img 
-              src={skill.icon} 
-              alt={skill.name}
-              className="w-16 h-16 rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow duration-300"
-            />
+            <div className="w-16 h-16 mb-3 flex items-center justify-center">
+              <img 
+                src={skill.icon} 
+                alt={skill.name}
+                className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <span className="text-sm text-slate-600 text-center font-medium">
+              {skill.name}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -107,22 +112,21 @@ const Skills = () => {
   );
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 text-left">
             Skills
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
         </motion.div>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <SkillCategory 
             title="Programming Languages" 
             skills={programmingLanguages} 
