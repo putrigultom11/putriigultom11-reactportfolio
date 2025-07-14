@@ -1,4 +1,6 @@
 
+import Navigation from "@/components/Navigation";
+import SocialSidebar from "@/components/SocialSidebar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
@@ -10,6 +12,8 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
+      <SocialSidebar />
       <Hero />
       <About />
       <Skills />
