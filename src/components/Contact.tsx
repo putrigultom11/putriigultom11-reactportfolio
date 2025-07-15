@@ -1,6 +1,6 @@
-
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Instagram, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Instagram, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +9,53 @@ import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs.sendForm(
+      "service_o6pvpi4",
+      "template_84akkkn",
+      e.currentTarget,
+      "DTjLlz8HlCDLNwuqd"
+    )
+      .then(() => {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        toast({
+          title: "Failed to Send",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -53,7 +100,7 @@ const Contact = () => {
       icon: Instagram,
       label: "Instagram",
       href: "https://www.instagram.com/putriitr._/",
-      color: "hover:text-blue-400"
+      color: "hover:text-pink-500"
     }
   ];
 
@@ -67,10 +114,8 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Work Together
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-4"></div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-4" />
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and software development.
           </p>
@@ -88,65 +133,80 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-white">Send a Message</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2 text-blue-100">
+                        Full Name
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Your full name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="bg-white/10 border-white/30 text-white placeholder-blue-200"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2 text-blue-100">
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="bg-white/10 border-white/30 text-white placeholder-blue-200"
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-blue-100">
-                      First Name
+                    <label htmlFor="subject" className="block text-sm font-medium mb-2 text-blue-100">
+                      Subject
                     </label>
                     <Input
-                      placeholder="John"
+                      id="subject"
+                      name="subject"
+                      placeholder="What is this about?"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
                       className="bg-white/10 border-white/30 text-white placeholder-blue-200"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium mb-2 text-blue-100">
-                      Last Name
+                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-blue-100">
+                      Message
                     </label>
-                    <Input
-                      placeholder="Doe"
-                      className="bg-white/10 border-white/30 text-white placeholder-blue-200"
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell me about your project or say hello..."
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-white/10 border-white/30 text-white placeholder-blue-200 resize-none"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-blue-100">
-                    Email
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="john.doe@example.com"
-                    className="bg-white/10 border-white/30 text-white placeholder-blue-200"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-blue-100">
-                    Subject
-                  </label>
-                  <Input
-                    placeholder="Project Discussion"
-                    className="bg-white/10 border-white/30 text-white placeholder-blue-200"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-blue-100">
-                    Message
-                  </label>
-                  <Textarea
-                    placeholder="Tell me about your project or opportunity..."
-                    rows={5}
-                    className="bg-white/10 border-white/30 text-white placeholder-blue-200 resize-none"
-                  />
-                </div>
-
-                <Button
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Send Message
-                </Button>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </motion.div>

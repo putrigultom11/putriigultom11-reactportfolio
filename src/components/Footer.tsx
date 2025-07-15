@@ -8,13 +8,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-slate-300">
-              © 2024 John Smith. All rights reserved.
+              © 2025 Putri Tamara Gultom.
             </p>
           </div>
           <div className="flex items-center space-x-2 text-slate-300">
-            <span>Made with</span>
+            <span>Made with lots of</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
-            <span>and lots of coffee</span>
           </div>
         </div>
       </div>

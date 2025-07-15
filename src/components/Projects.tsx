@@ -10,7 +10,7 @@ const Projects = () => {
       title: "FerryPass – Ferry Booking Ticket System",
       description: "Full-featured ferry ticketing platform built with Laravel and React, enabling digital ticket booking, vehicle classification, and QR-based payments via Midtrans. Includes chatbot with NLP integration, RESTful API architecture, and validated through SUS & UAT testing.",
       tech: ["REST API", "Flutter", "Tailwind CSS", "MySQL", "React", "Laravel", "NLP", "Selenium", "Midtrans"],
-      image: "/kmp.webp",
+      imageUrl: "/kmp.webp",
       demoUrl: "#",
       codeUrl: "https://github.com/ImmanuelPartogi/TA-Kel-13"
     },
@@ -18,7 +18,7 @@ const Projects = () => {
       title: "Newsly – Android News Reader Application",
       description: "Real-time Android news app developed in Kotlin with infinite scrolling, clean architecture, and live data integration using NewsAPI. Supports Retrofit-based API calls and optimized for performance on various Android devices.",
       tech: ["Kotlin", "REST API", "Retrofit", "Android"],
-      image: "/rakamin.png",
+      imageUrl: "/rakamin.png",
       demoUrl: "",
       codeUrl: "https://github.com/putriitr/NewsApp"
     },
@@ -26,23 +26,23 @@ const Projects = () => {
       title: "Company Profile Website Suite",
       description: "Suite of customizable company profile websites with user authentication, admin CMS, and full CRUD functionality. Built with Laravel and Tailwind CSS, tested using Cypress and Selenium to ensure responsive UI and backend reliability.",
       tech: ["Laravel", "HTML/CSS", "Tailwind CSS", "Cypress", "JavaScript", "MySQL", "Selenium"],
-      image: "bg-gradient-to-br from-orange-500 to-red-600",
+      imageUrl: "/compro-gsa.jpeg",
       demoUrl: "#",
       codeUrl: "https://github.com/putrigultom11/GSA-Compro"
     },
-    {
-      title: "Labtek & Labverse – ECommerce Website",
-      description: "Dual e-commerce platforms featuring product management, shopping cart, checkout integration, and admin dashboards. Developed with Laravel and Tailwind CSS, integrated with Midtrans for payments and tested via Cypress.",
-      tech: ["Laravel", "Tailwind CSS", "HTML", "PHP", "MySQL", "Midtrans", "Cypress"],
-      image: "bg-gradient-to-br from-indigo-500 to-pink-600",
-      demoUrl: "#",
-      codeUrl: "https://github.com/iqbalsiagian17/Umalo-Ags"
-    },
+    // {
+    //   title: "Labtek & Labverse – ECommerce Website",
+    //   description: "Dual e-commerce platforms featuring product management, shopping cart, checkout integration, and admin dashboards. Developed with Laravel and Tailwind CSS, integrated with Midtrans for payments and tested via Cypress.",
+    //   tech: ["Laravel", "Tailwind CSS", "HTML", "PHP", "MySQL", "Midtrans", "Cypress"],
+    //   imageUrl: "/rakamin.png",
+    //   demoUrl: "#",
+    //   codeUrl: "https://github.com/iqbalsiagian17/Umalo-Ags"
+    // },
     {
       title: "Purnama Balige Hotel Reservation System",
       description: "A hotel booking system developed with PHP and Laravel, supporting room reservations, microservice architecture, and Midtrans payment gateway. Includes automated testing with Katalon and responsive front-end UI.",
       tech: ["Laravel", "Tailwind CSS", "HTML", "PHP", "MySQL", "REST API", "Katalon"],
-      image: "bg-gradient-to-br from-indigo-500 to-pink-600",
+      imageUrl: "/hotel-booking.png",
       demoUrl: "#",
       codeUrl: "https://github.com/putriitr/PA2Kel07_purnamaHotel"
     }
@@ -63,11 +63,11 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-             Projects that highlight my practical experience in software development, system design, and modern technologies.
+            Projects that highlight my practical experience in software development, system design, and modern technologies.
           </p>
         </motion.div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid md:grid-cols-4 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -77,18 +77,20 @@ const Projects = () => {
               viewport={{ once: true }}
             >
               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
-                <div className={`h-48 ${project.image} relative overflow-hidden`}>
+                <div className="h-48 relative overflow-hidden">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                   <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {/* <Button size="sm" variant="secondary" className="shadow-lg">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button> */}
                     <Button size="sm" variant="secondary" className="shadow-lg">
                       <Github className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
-                
+
                 <CardHeader>
                   <CardTitle className="text-xl text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
@@ -97,7 +99,7 @@ const Projects = () => {
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                
+
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
@@ -109,7 +111,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-3 pt-2">
                     {/* <Button
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
