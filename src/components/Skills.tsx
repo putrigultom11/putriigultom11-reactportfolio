@@ -3,77 +3,78 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   const programmingLanguages = [
-    { 
-      name: "Golang", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+    {
+      name: "HTML/CSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
     },
-    { 
-      name: "PHP", 
+    {
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      name: "PHP",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
     },
-    { 
-      name: "Python", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-    },
-    { 
-      name: "JavaScript", 
+    {
+      name: "JavaScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
     },
-    { 
-      name: "Java", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    {
+      name: "Laravel",
+      icon: "/laravel.png"
     },
-    { 
-      name: "C#", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+    {
+      name: "Kotlin",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+    },
+    {
+      name: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      name: "Golang",
+      icon: "/golang.png"
+    },
+    {
+      name: "Java",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
     }
   ];
 
   const databases = [
-    { 
-      name: "PostgreSQL", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-    },
-    { 
-      name: "MySQL", 
+    {
+      name: "MySQL",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
     },
-    { 
-      name: "MongoDB", 
+    {
+      name: "MongoDB",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
     },
-    { 
-      name: "Neo4J", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg"
+    {
+      name: "PostgreSQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
     }
   ];
 
-  const cloudDevOps = [
-    { 
-      name: "GCP", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+  const testingTools = [
+    {
+      name: "Postman",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
     },
-    { 
-      name: "AWS", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    {
+      name: "Selenium",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
     },
-    { 
-      name: "Docker", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    {
+      name: "Katalon Studio",
+      icon: "/katalon.png"
     },
-    { 
-      name: "Kubernetes", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-    },
-    { 
-      name: "Git", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-    },
-    { 
-      name: "Jenkins (CI/CD)", 
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+    {
+      name: "Robot Framework",
+      icon: "/robot.png"
     }
   ];
+
 
   const SkillCategory = ({ title, skills, delay = 0 }) => (
     <motion.div
@@ -96,8 +97,8 @@ const Skills = () => {
             className="flex flex-col items-center group cursor-pointer"
           >
             <div className="w-16 h-16 mb-3 flex items-center justify-center">
-              <img 
-                src={skill.icon} 
+              <img
+                src={skill.icon}
                 alt={skill.name}
                 className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
               />
@@ -119,27 +120,28 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 text-left">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
             Skills
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
         </motion.div>
-        
+
         <div className="max-w-6xl mx-auto">
-          <SkillCategory 
-            title="Programming Languages" 
-            skills={programmingLanguages} 
+          <SkillCategory
+            title="Programming Languages"
+            skills={programmingLanguages}
             delay={0}
           />
-          <SkillCategory 
-            title="Databases" 
-            skills={databases} 
+          <SkillCategory
+            title="Databases"
+            skills={databases}
             delay={0.2}
           />
-          <SkillCategory 
-            title="Cloud & DevOps" 
-            skills={cloudDevOps} 
+          <SkillCategory
+            title="Testing Tools"
+            skills={testingTools}
             delay={0.4}
           />
         </div>

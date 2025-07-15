@@ -7,36 +7,44 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-      image: "bg-gradient-to-br from-blue-500 to-purple-600",
+      title: "FerryPass – Ferry Booking Ticket System",
+      description: "Full-featured ferry ticketing platform built with Laravel and React, enabling digital ticket booking, vehicle classification, and QR-based payments via Midtrans. Includes chatbot with NLP integration, RESTful API architecture, and validated through SUS & UAT testing.",
+      tech: ["REST API", "Flutter", "Tailwind CSS", "MySQL", "React", "Laravel", "NLP", "Selenium", "Midtrans"],
+      image: "/kmp.webp",
       demoUrl: "#",
-      codeUrl: "#"
+      codeUrl: "https://github.com/ImmanuelPartogi/TA-Kel-13"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["React", "Socket.io", "MongoDB", "Express.js", "JWT"],
-      image: "bg-gradient-to-br from-green-500 to-teal-600",
-      demoUrl: "#",
-      codeUrl: "#"
+      title: "Newsly – Android News Reader Application",
+      description: "Real-time Android news app developed in Kotlin with infinite scrolling, clean architecture, and live data integration using NewsAPI. Supports Retrofit-based API calls and optimized for performance on various Android devices.",
+      tech: ["Kotlin", "REST API", "Retrofit", "Android"],
+      image: "/rakamin.png",
+      demoUrl: "",
+      codeUrl: "https://github.com/putriitr/NewsApp"
     },
     {
-      title: "Weather Analytics Dashboard",
-      description: "Interactive weather dashboard with data visualization, forecasting, and location-based weather insights using external APIs.",
-      tech: ["React", "Chart.js", "OpenWeather API", "TypeScript", "Redux"],
+      title: "Company Profile Website Suite",
+      description: "Suite of customizable company profile websites with user authentication, admin CMS, and full CRUD functionality. Built with Laravel and Tailwind CSS, tested using Cypress and Selenium to ensure responsive UI and backend reliability.",
+      tech: ["Laravel", "HTML/CSS", "Tailwind CSS", "Cypress", "JavaScript", "MySQL", "Selenium"],
       image: "bg-gradient-to-br from-orange-500 to-red-600",
       demoUrl: "#",
-      codeUrl: "#"
+      codeUrl: "https://github.com/putrigultom11/GSA-Compro"
     },
     {
-      title: "Social Media API",
-      description: "RESTful API for social media platform with user management, post creation, comments, and real-time notifications.",
-      tech: ["Node.js", "Express.js", "MongoDB", "Socket.io", "Cloudinary"],
+      title: "Labtek & Labverse – ECommerce Website",
+      description: "Dual e-commerce platforms featuring product management, shopping cart, checkout integration, and admin dashboards. Developed with Laravel and Tailwind CSS, integrated with Midtrans for payments and tested via Cypress.",
+      tech: ["Laravel", "Tailwind CSS", "HTML", "PHP", "MySQL", "Midtrans", "Cypress"],
       image: "bg-gradient-to-br from-indigo-500 to-pink-600",
       demoUrl: "#",
-      codeUrl: "#"
+      codeUrl: "https://github.com/iqbalsiagian17/Umalo-Ags"
+    },
+    {
+      title: "Purnama Balige Hotel Reservation System",
+      description: "A hotel booking system developed with PHP and Laravel, supporting room reservations, microservice architecture, and Midtrans payment gateway. Includes automated testing with Katalon and responsive front-end UI.",
+      tech: ["Laravel", "Tailwind CSS", "HTML", "PHP", "MySQL", "REST API", "Katalon"],
+      image: "bg-gradient-to-br from-indigo-500 to-pink-600",
+      demoUrl: "#",
+      codeUrl: "https://github.com/putriitr/PA2Kel07_purnamaHotel"
     }
   ];
 
@@ -55,11 +63,11 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
+             Projects that highlight my practical experience in software development, system design, and modern technologies.
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -72,9 +80,9 @@ const Projects = () => {
                 <div className={`h-48 ${project.image} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                   <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button size="sm" variant="secondary" className="shadow-lg">
+                    {/* <Button size="sm" variant="secondary" className="shadow-lg">
                       <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    </Button> */}
                     <Button size="sm" variant="secondary" className="shadow-lg">
                       <Github className="h-4 w-4" />
                     </Button>
@@ -103,16 +111,16 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3 pt-2">
-                    <Button
+                    {/* <Button
                       className="flex-1 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
                       onClick={() => window.open(project.demoUrl)}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
-                    </Button>
+                    </Button> */}
                     <Button
                       variant="outline"
-                      className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
                       onClick={() => window.open(project.codeUrl)}
                     >
                       <Github className="mr-2 h-4 w-4" />

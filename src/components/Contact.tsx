@@ -1,29 +1,31 @@
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Instagram, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "john.smith@email.com",
-      href: "mailto:john.smith@email.com"
+      value: "putriigultom11@gmail.com",
+      href: "mailto:putriigultom11@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+62 822-7726-3370",
+      href: "tel:+6282277263370"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Toba, North Sumatra",
       href: "#"
     }
   ];
@@ -32,19 +34,25 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/putriitr",
+      color: "hover:text-gray-800"
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/putrigultom11",
       color: "hover:text-gray-800"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/putrigultom07",
       color: "hover:text-blue-600"
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com",
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/putriitr._/",
       color: "hover:text-blue-400"
     }
   ];
@@ -64,11 +72,10 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-4"></div>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects. 
-            Let's connect and create something amazing together!
+            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and software development.
           </p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div
@@ -87,8 +94,8 @@ const Contact = () => {
                     <label className="block text-sm font-medium mb-2 text-blue-100">
                       First Name
                     </label>
-                    <Input 
-                      placeholder="John" 
+                    <Input
+                      placeholder="John"
                       className="bg-white/10 border-white/30 text-white placeholder-blue-200"
                     />
                   </div>
@@ -96,46 +103,46 @@ const Contact = () => {
                     <label className="block text-sm font-medium mb-2 text-blue-100">
                       Last Name
                     </label>
-                    <Input 
-                      placeholder="Doe" 
+                    <Input
+                      placeholder="Doe"
                       className="bg-white/10 border-white/30 text-white placeholder-blue-200"
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2 text-blue-100">
                     Email
                   </label>
-                  <Input 
+                  <Input
                     type="email"
-                    placeholder="john.doe@example.com" 
+                    placeholder="john.doe@example.com"
                     className="bg-white/10 border-white/30 text-white placeholder-blue-200"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2 text-blue-100">
                     Subject
                   </label>
-                  <Input 
-                    placeholder="Project Discussion" 
+                  <Input
+                    placeholder="Project Discussion"
                     className="bg-white/10 border-white/30 text-white placeholder-blue-200"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2 text-blue-100">
                     Message
                   </label>
-                  <Textarea 
+                  <Textarea
                     placeholder="Tell me about your project or opportunity..."
                     rows={5}
                     className="bg-white/10 border-white/30 text-white placeholder-blue-200 resize-none"
                   />
                 </div>
-                
-                <Button 
+
+                <Button
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Send Message
@@ -143,7 +150,7 @@ const Contact = () => {
               </CardContent>
             </Card>
           </motion.div>
-          
+
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -176,7 +183,7 @@ const Contact = () => {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-2xl font-bold mb-6">Follow Me</h3>
               <div className="flex space-x-4">

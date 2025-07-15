@@ -7,22 +7,22 @@ const About = () => {
     {
       icon: Code,
       title: "Clean Code",
-      description: "Writing maintainable and efficient code"
+      description: "Writing maintainable and efficient code."
     },
     {
       icon: Heart,
       title: "Passionate",
-      description: "Love for continuous learning and growth"
+      description: "Motivated for continuous learning and growth."
     },
     {
       icon: Zap,
       title: "Fast Learner",
-      description: "Quick to adapt to new technologies"
+      description: "Quick to adapt to new tools & technologies."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="#about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -36,7 +36,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -45,24 +45,26 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-slate-600 leading-relaxed">
-              I'm a recent Software Engineering graduate with a passion for creating 
-              innovative digital solutions. My journey in tech has been driven by 
-              curiosity and a desire to solve complex problems through elegant code.
+            <p className="text-justify text-lg text-slate-600 leading-relaxed">
+              I'm a recent graduate in Information Technology with a strong passion for crafting
+              innovative and impactful digital experiences. I specialize in building responsive, 
+              user-centric, and scalable web and mobile applications that combine clean design with 
+              efficient functionality.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              I specialize in full-stack development with expertise in modern 
-              JavaScript frameworks, cloud technologies, and database design. 
-              I'm always eager to learn new technologies and contribute to 
-              meaningful projects that make a difference.
+            <p className="text-justify text-lg text-slate-600 leading-relaxed">
+              Throughout my academic and hands-on experiences, I've worked with modern technologies
+              to develop full-stack applications, focusing on both intuitive front-end interfaces 
+              and robust back-end systems. I enjoy working in collaborative environments and am 
+              always eager to explore new tools, frameworks, and best practices in the tech world.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              When I'm not coding, you can find me exploring new tech trends, 
-              contributing to open-source projects, or mentoring fellow developers 
-              in the community.
+            <p className="text-justify text-lg text-slate-600 leading-relaxed">
+              Currently, I’m seeking opportunities to contribute to forward-thinking teams where I can
+              continue to grow as a developer. My goal is to leverage my technical expertise, creativity, 
+              and fresh perspective to help organizations bring their ideas to life and achieve their 
+              digital goals.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
