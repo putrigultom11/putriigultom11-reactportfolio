@@ -9,35 +9,38 @@ const GithubDropdown = () => (
     <PopoverTrigger asChild>
       <button
         aria-label="GitHub Accounts"
-        className="w-12 h-12 bg-white shadow-lg rounded-lg flex items-center justify-center text-slate-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
+        className="w-12 h-12 bg-white shadow-lg rounded-lg flex items-center justify-center text-slate-600 hover:text-black hover:shadow-xl transition-all duration-300"
       >
         <Github size={20} />
       </button>
     </PopoverTrigger>
-    <PopoverContent className="w-48 text-sm">
-      <p className="font-semibold mb-2">Personal GitHub :</p>
-      <ul className="space-y-1">
-        <li>
-          <a
-            href="https://github.com/putriitr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-indigo-600"
-          >
-            putriitr
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/putrigultom11"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-indigo-600"
-          >
-            putrigultom11
-          </a>
-        </li>
-      </ul>
+    <PopoverContent className="w-64 text-sm p-4 rounded-xl shadow-xl border border-slate-200">
+      <p className="font-semibold text-slate-800 mb-3">GitHub Accounts</p>
+      <div className="space-y-3">
+        <a
+          href="https://github.com/putriitr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-100 transition"
+        >
+          <div className="flex items-center space-x-2 text-indigo-600">
+            <Github size={18} />
+            <span className="font-medium">putriitr</span>
+          </div>
+        </a>
+        <hr className="border-slate-200" />
+        <a
+          href="https://github.com/putrigultom11"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-100 transition"
+        >
+          <div className="flex items-center space-x-2 text-indigo-600">
+            <Github size={18} />
+            <span className="font-medium">putrigultom11</span>
+          </div>
+        </a>
+      </div>
     </PopoverContent>
   </Popover>
 );
@@ -56,12 +59,12 @@ const SocialSidebar = () => {
       icon: Mail,
       href: "mailto:putriigultom11@gmail.com",
       label: "Email"
-    },
-    {
-      icon: FaWhatsapp,
-      href: "https://wa.me/6282277263370", 
-      label: "WhatsApp"
     }
+    // {
+    //   icon: FaWhatsapp,
+    //   href: "https://wa.me/6282277263370", 
+    //   label: "WhatsApp"
+    // }
   ];
 
   useEffect(() => {
