@@ -63,12 +63,12 @@ const Contact = () => {
       value: "putriigultom11@gmail.com",
       href: "mailto:putriigultom11@gmail.com"
     },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+62 822-7726-3370",
-      href: "tel:+6282277263370"
-    },
+    // {
+    //   icon: Phone,
+    //   label: "Phone",
+    //   value: "+62 822-7726-3370",
+    //   href: "tel:+6282277263370"
+    // },
     {
       icon: MapPin,
       label: "Location",
